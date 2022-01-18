@@ -1,13 +1,37 @@
 import React from 'react';
-import {createTheme} from '@mui/material'
+import {createTheme, responsiveFontSizes} from '@mui/material'
 
-const tema = createTheme({
+let tema = createTheme({
     palette:{
         primary: {
-            main: '#000'
+            main: '#2222',
+
+        },
+        secondary: {
+            main: '#fff'
         }
-    }
+
+    },
+    
+    typography: {
+        h1: {
+          fontWeight:'bold',
+        },
+        h2: {
+          fontWeight: 600,
+
+          
+        },
+        h5: {
+            fontWeight:600,
+        },
+        button: {
+          fontStyle: 'roboto',
+        },
+      },
+    
         
 })
+tema = responsiveFontSizes(tema)
 
 export default tema

@@ -1,0 +1,11 @@
+.gridItemStyle{
+    padding-left: 0 !important; 
+    
+    
+}
+.Link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

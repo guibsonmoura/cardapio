@@ -1,17 +1,15 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import {estiloContainer,estiloAppBar,estiloGridContainer,estiloCaxiaTexto,estiloGridItem} from './styles'
-import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined';
-import AppBar from '@mui/material/AppBar';  
-import Cartao from '../../components/Card/index';
 import IconButton from '@mui/material/IconButton';
-import './style.css'
-import {Link} from 'react-router-dom';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-
+import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined';
+import Typography from '@mui/material/Typography';
+import Cartao from '../../components/Card';
+import {Link} from 'react-router-dom'
 import './style.css'
+import { estiloAppBar,estiloContainer,estiloCaxiaTexto,estiloGridItem,estiloGridContainer} from '../lanches/styles';
 
 export default function(){
     const imagem = 'https://source.unsplash.com/category/nature/'
@@ -40,14 +38,8 @@ export default function(){
         descricaoProduto:'Arroz - Tomate - Carne 180g - Bacon - Calabresa - Pão - feijão - Arroz - Tomate - Carne 180g - Bacon - Calabresa - Pão - feijão'
     },
     ]
-    
     return(
-        <Container 
-            maxWidth="sm"
-            sx={
-                estiloContainer
-                }
-        >
+        <Container maxWidth='sm' sx={estiloContainer}>
             <AppBar position='static'color='secondary' sx={estiloAppBar}>
                 <Link to='/' className='link'>
                     <IconButton size='large' edge='start' color='primary' sx={{ml:3}}>
@@ -55,10 +47,10 @@ export default function(){
                     </IconButton>
                 </Link>
                 <Box sx={estiloCaxiaTexto}>
-                    <Typography variant='h2'>Lanches</Typography>
+                    <Typography variant='h2'>Bebidas</Typography>
                 </Box>
             </AppBar>
-            <Grid container spacing={3} sx={estiloGridContainer} >
+            <Grid container spacing={3} sx={estiloGridContainer}>
                 {imagens.map((obj) => (
                     <Grid item xs={12} sx={estiloGridItem} classes={{item:'gridItemStyle'}}>
                         <Cartao
@@ -68,10 +60,8 @@ export default function(){
                             descricaoProduto={obj.descricaoProduto}
                         />
                     </Grid>
-                ))}               
-               
+                ))}
             </Grid>
-            
         </Container>
     )
 }

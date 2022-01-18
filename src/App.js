@@ -8,9 +8,6 @@ function App() {
     <ThemeProvider theme={tema}>
       <Rotas/>
     </ThemeProvider>
-      
-    
-    
   );
 }
 
